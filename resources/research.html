@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="বাংলা NLP গবেষণা পেপার - BanglaBERT, Bengali NER, Sentiment Analysis এবং আরও গবেষণা।">
+  <title>গবেষণা পেপার | Bangladeshi-AI</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%23006a4e'/%3E%3Ctext y='72' x='50' text-anchor='middle' font-size='60'%3E🇧🇩%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar" role="navigation">
+    <div class="nav-container">
+      <a href="../index.html" class="nav-logo">
+        <span class="logo-flag">🇧🇩</span>
+        <span class="logo-text">
+          <span>Bangladeshi-AI</span>
+          <span>বাংলা ভাষার প্ল্যাটফর্ম</span>
+        </span>
+      </a>
+      <ul class="nav-menu" id="navMenu">
+        <li class="nav-item"><a href="../index.html" class="nav-link"><i class="fas fa-home"></i> হোম</a></li>
+        <li class="nav-item dropdown">
+          <a href="#" class="nav-link"><i class="fas fa-tools"></i> টুলস <i class="fas fa-chevron-down" style="font-size:.7em"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="../tools/text-analyzer.html" class="dropdown-item"><i class="fas fa-file-alt"></i> টেক্সট বিশ্লেষক</a></li>
+            <li><a href="../tools/speech-to-text.html" class="dropdown-item"><i class="fas fa-microphone"></i> স্পিচ-টু-টেক্সট</a></li>
+            <li><a href="../tools/translator.html" class="dropdown-item"><i class="fas fa-language"></i> অনুবাদক</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a href="#" class="nav-link active"><i class="fas fa-book"></i> রিসোর্স <i class="fas fa-chevron-down" style="font-size:.7em"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="datasets.html" class="dropdown-item"><i class="fas fa-database"></i> ডেটাসেট</a></li>
+            <li><a href="tutorials.html" class="dropdown-item"><i class="fas fa-graduation-cap"></i> টিউটোরিয়াল</a></li>
+            <li><a href="research.html" class="dropdown-item"><i class="fas fa-flask"></i> গবেষণা</a></li>
+          </ul>
+        </li>
+        <li class="nav-item"><a href="../pages/about.html" class="nav-link"><i class="fas fa-info-circle"></i> সম্পর্কে</a></li>
+        <li class="nav-item"><a href="../pages/contribute.html" class="nav-link nav-cta"><i class="fas fa-hands-helping"></i> অবদান রাখুন</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <main class="page-content">
+
+    <!-- Hero -->
+    <section class="tool-page-hero">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="../index.html">হোম</a>
+          <span>/</span>
+          <a href="#">রিসোর্স</a>
+          <span>/</span>
+          <span>গবেষণা</span>
+        </nav>
+        <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1rem">
+          <div style="width:56px;height:56px;background:linear-gradient(135deg,#f42a41,#fb923c);border-radius:14px;display:flex;align-items:center;justify-content:center;color:white;font-size:1.5rem">
+            <i class="fas fa-flask"></i>
+          </div>
+          <div>
+            <h1>বাংলা NLP গবেষণা</h1>
+            <p style="margin:0;font-size:.9rem">Bengali NLP Research Papers</p>
+          </div>
+        </div>
+        <p>বাংলা ভাষা প্রক্রিয়াকরণ এবং কৃত্রিম বুদ্ধিমত্তা বিষয়ক সেরা গবেষণা পেপার এবং একাডেমিক রিসোর্স।</p>
+      </div>
+    </section>
+
+    <!-- Research Content -->
+    <section class="section-sm">
+      <div class="container">
+
+        <!-- Landmark Papers -->
+        <div style="margin-bottom:2.5rem">
+          <h2 style="font-size:1.4rem;margin-bottom:1.25rem">
+            <i class="fas fa-award" style="color:var(--color-accent)"></i> গুরুত্বপূর্ণ গবেষণা পেপার
+          </h2>
+          <div style="display:flex;flex-direction:column;gap:1rem">
+
+            <div class="dataset-item">
+              <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;flex-wrap:wrap">
+                <div style="flex:1;min-width:200px">
+                  <div style="display:flex;align-items:center;gap:.5rem;margin-bottom:.5rem">
+                    <span class="tag purple">EMNLP 2023</span>
+                    <span class="tag blue">Language Model</span>
+                  </div>
+                  <h3>BanglaBERT: Language Model Pretraining and Benchmarks for Low-Resource Language Understanding Evaluation in Bangla</h3>
+                  <p style="font-size:.875rem;margin:.5rem 0;color:var(--text-secondary)">
+                    <strong>লেখক:</strong> Sagor Sarker et al., BUET NLP Lab
+                  </p>
+                  <p style="font-size:.875rem">বাংলা ভাষার জন্য BERT-ভিত্তিক প্রথম বড় মাপের language model। বাংলা NLP বেঞ্চমার্ক এবং প্রি-ট্রেনড মডেল।</p>
+                </div>
+                <div style="display:flex;flex-direction:column;gap:.5rem;flex-shrink:0">
+                  <a href="https://arxiv.org/abs/2101.00204" target="_blank" rel="noopener" class="btn btn-sm btn-primary">
+                    <i class="fas fa-file-pdf"></i> arXiv
+                  </a>
+                  <a href="https://huggingface.co/csebuetnlp/banglabert" target="_blank" rel="noopener" class="btn btn-sm btn-secondary">
+                    <i class="fas fa-robot"></i> Model
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="dataset-item">
+              <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;flex-wrap:wrap">
+                <div style="flex:1;min-width:200px">
+                  <div style="display:flex;align-items:center;gap:.5rem;margin-bottom:.5rem">
+                    <span class="tag orange">ACL 2021</span>
+                    <span class="tag blue">Summarization</span>
+                  </div>
+                  <h3>XL-Sum: Large-Scale Multilingual Abstractive Summarization for 44 Languages</h3>
+                  <p style="font-size:.875rem;margin:.5rem 0;color:var(--text-secondary)">
+                    <strong>লেখক:</strong> Hasan et al., BUET
+                  </p>
+                  <p style="font-size:.875rem">৪৪টি ভাষার জন্য বড় মাপের সংক্ষেপ ডেটাসেট, বাংলাসহ। BBC News থেকে সংকলিত।</p>
+                </div>
+                <div style="display:flex;flex-direction:column;gap:.5rem;flex-shrink:0">
+                  <a href="https://aclanthology.org/2021.findings-acl.413" target="_blank" rel="noopener" class="btn btn-sm btn-primary">
+                    <i class="fas fa-file-pdf"></i> ACL
+                  </a>
+                  <a href="https://huggingface.co/datasets/csebuetnlp/xlsum" target="_blank" rel="noopener" class="btn btn-sm btn-secondary">
+                    <i class="fas fa-database"></i> Dataset
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="dataset-item">
+              <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;flex-wrap:wrap">
+                <div style="flex:1;min-width:200px">
+                  <div style="display:flex;align-items:center;gap:.5rem;margin-bottom:.5rem">
+                    <span class="tag">LREC 2022</span>
+                    <span class="tag blue">NER</span>
+                  </div>
+                  <h3>BanglaCoNLL: A Benchmark Dataset for Named Entity Recognition in Bangla</h3>
+                  <p style="font-size:.875rem;margin:.5rem 0;color:var(--text-secondary)">
+                    <strong>লেখক:</strong> Islam et al.
+                  </p>
+                  <p style="font-size:.875rem">বাংলা Named Entity Recognition-এর জন্য বেঞ্চমার্ক ডেটাসেট এবং মডেল মূল্যায়ন।</p>
+                </div>
+                <div style="display:flex;flex-direction:column;gap:.5rem;flex-shrink:0">
+                  <a href="https://arxiv.org/abs/2204.11689" target="_blank" rel="noopener" class="btn btn-sm btn-primary">
+                    <i class="fas fa-file-pdf"></i> arXiv
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="dataset-item">
+              <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;flex-wrap:wrap">
+                <div style="flex:1;min-width:200px">
+                  <div style="display:flex;align-items:center;gap:.5rem;margin-bottom:.5rem">
+                    <span class="tag purple">Interspeech 2022</span>
+                    <span class="tag orange">ASR</span>
+                  </div>
+                  <h3>Bengali.AI: Automatic Speech Recognition for Bengali</h3>
+                  <p style="font-size:.875rem;margin:.5rem 0;color:var(--text-secondary)">
+                    <strong>লেখক:</strong> Bengali.AI Community
+                  </p>
+                  <p style="font-size:.875rem">বাংলা স্বয়ংক্রিয় বক্তৃতা স্বীকৃতির জন্য ডেটাসেট এবং বেসলাইন মডেল।</p>
+                </div>
+                <div style="display:flex;flex-direction:column;gap:.5rem;flex-shrink:0">
+                  <a href="https://bengali.ai" target="_blank" rel="noopener" class="btn btn-sm btn-primary">
+                    <i class="fas fa-external-link-alt"></i> Bengali.AI
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Research Areas -->
+        <div style="margin-bottom:2rem">
+          <h2 style="font-size:1.4rem;margin-bottom:1.25rem">
+            <i class="fas fa-map" style="color:var(--color-primary)"></i> গবেষণার ক্ষেত্র
+          </h2>
+          <div class="grid grid-3" style="gap:1rem">
+            <div class="feature-card" style="padding:1.25rem">
+              <div class="feature-icon green" style="width:44px;height:44px;font-size:1.1rem"><i class="fas fa-brain"></i></div>
+              <h3 style="font-size:1rem">Language Models</h3>
+              <p style="font-size:.85rem">BanglaBERT, mBERT, XLM-R এবং GPT-ভিত্তিক বাংলা ভাষা মডেল।</p>
+              <a href="https://arxiv.org/search/?query=bengali+language+model&searchtype=all" target="_blank" rel="noopener" class="feature-link" style="margin-top:.5rem">arXiv-এ দেখুন <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="feature-card" style="padding:1.25rem">
+              <div class="feature-icon blue" style="width:44px;height:44px;font-size:1.1rem"><i class="fas fa-microphone"></i></div>
+              <h3 style="font-size:1rem">Speech Recognition</h3>
+              <p style="font-size:.85rem">বাংলা ASR মডেল, acoustic modeling এবং ল্যাঙ্গুয়েজ মডেলিং।</p>
+              <a href="https://arxiv.org/search/?query=bengali+speech+recognition&searchtype=all" target="_blank" rel="noopener" class="feature-link" style="margin-top:.5rem">গবেষণা দেখুন <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="feature-card" style="padding:1.25rem">
+              <div class="feature-icon red" style="width:44px;height:44px;font-size:1.1rem"><i class="fas fa-language"></i></div>
+              <h3 style="font-size:1rem">Machine Translation</h3>
+              <p style="font-size:.85rem">বাংলা-ইংরেজি নিউরাল মেশিন ট্রান্সলেশন গবেষণা।</p>
+              <a href="https://arxiv.org/search/?query=bengali+machine+translation&searchtype=all" target="_blank" rel="noopener" class="feature-link" style="margin-top:.5rem">গবেষণা দেখুন <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Academic Sources -->
+        <div style="padding:1.5rem;background:rgba(0,106,78,0.05);border:1px solid rgba(0,106,78,0.15);border-radius:var(--radius-lg)">
+          <h4>📚 গবেষণা খোঁজার উৎস</h4>
+          <div style="display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1rem">
+            <a href="https://arxiv.org/search/?query=bengali+nlp&searchtype=all" target="_blank" rel="noopener" class="btn btn-sm btn-secondary">arXiv Bengali NLP</a>
+            <a href="https://aclanthology.org/?query=bengali" target="_blank" rel="noopener" class="btn btn-sm btn-secondary">ACL Anthology</a>
+            <a href="https://scholar.google.com/scholar?q=bengali+natural+language+processing" target="_blank" rel="noopener" class="btn btn-sm btn-secondary"><i class="fab fa-google"></i> Google Scholar</a>
+            <a href="https://paperswithcode.com/search?q=bengali" target="_blank" rel="noopener" class="btn btn-sm btn-secondary">Papers With Code</a>
+          </div>
+        </div>
+
+        <!-- Contribute -->
+        <div style="margin-top:2rem;padding:1.5rem;background:linear-gradient(135deg,rgba(0,106,78,.07),rgba(0,145,106,.05));border:1px dashed rgba(0,106,78,.3);border-radius:var(--radius-lg)">
+          <h4>🔬 আপনার গবেষণা যোগ করুন</h4>
+          <p style="font-size:.875rem;margin:.5rem 0 1rem">বাংলা NLP বিষয়ক গবেষণা করেছেন? এখানে যোগ করুন!</p>
+          <a href="../pages/contribute.html" class="btn btn-primary btn-sm">
+            <i class="fas fa-plus"></i> গবেষণা যোগ করুন
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <p>&copy; <span class="current-year"></span> Bangladeshi-AI। MIT লাইসেন্সের অধীনে উন্মুক্ত।</p>
+        <p>বাংলা ভাষার জন্য তৈরি ❤️</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../assets/js/script.js"></script>
+</body>
+</html>
