@@ -123,7 +123,7 @@ class NCTBContextService:
         # 5. Relevant syllabus topics
         topics = self.get_syllabus_topics(subject, class_level)
         if topics:
-            topic_list = "、".join(topics)
+            topic_list = ", ".join(topics)
             parts.append(f"এই শ্রেণীতে প্রাসঙ্গিক বিষয়সমূহ: {topic_list}")
 
         # 6. Data-saver modifier
