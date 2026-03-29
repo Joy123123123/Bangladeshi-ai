@@ -1,0 +1,11 @@
+# Requirements for Bangladeshi-ai
+
+fastapi==0.68.0
+uvicorn==0.15.0
+pydantic==1.9.0
+motor==2.5.1
+redis==4.0.2
+nltk==3.6.3
+bengali==0.0.4
+transformers==4.18.0
+llama-cpp-python==0.1.4
