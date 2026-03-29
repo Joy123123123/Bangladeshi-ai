@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="বাংলা NLP ডেটাসেট - Bengali.AI, CC-100, IndicNLP সহ বিভিন্ন উন্মুক্ত বাংলা ডেটাসেটের সংকলন।">
+  <title>বাংলা ডেটাসেট | Bangladeshi-AI</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%23006a4e'/%3E%3Ctext y='72' x='50' text-anchor='middle' font-size='60'%3E🇧🇩%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar" role="navigation">
+    <div class="nav-container">
+      <a href="../index.html" class="nav-logo">
+        <span class="logo-flag">🇧🇩</span>
+        <span class="logo-text">
+          <span>Bangladeshi-AI</span>
+          <span>বাংলা ভাষার প্ল্যাটফর্ম</span>
+        </span>
+      </a>
+      <ul class="nav-menu" id="navMenu">
+        <li class="nav-item"><a href="../index.html" class="nav-link"><i class="fas fa-home"></i> হোম</a></li>
+        <li class="nav-item dropdown">
+          <a href="#" class="nav-link"><i class="fas fa-tools"></i> টুলস <i class="fas fa-chevron-down" style="font-size:.7em"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="../tools/text-analyzer.html" class="dropdown-item"><i class="fas fa-file-alt"></i> টেক্সট বিশ্লেষক</a></li>
+            <li><a href="../tools/speech-to-text.html" class="dropdown-item"><i class="fas fa-microphone"></i> স্পিচ-টু-টেক্সট</a></li>
+            <li><a href="../tools/translator.html" class="dropdown-item"><i class="fas fa-language"></i> অনুবাদক</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a href="#" class="nav-link active"><i class="fas fa-book"></i> রিসোর্স <i class="fas fa-chevron-down" style="font-size:.7em"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="datasets.html" class="dropdown-item"><i class="fas fa-database"></i> ডেটাসেট</a></li>
+            <li><a href="tutorials.html" class="dropdown-item"><i class="fas fa-graduation-cap"></i> টিউটোরিয়াল</a></li>
+            <li><a href="research.html" class="dropdown-item"><i class="fas fa-flask"></i> গবেষণা</a></li>
+          </ul>
+        </li>
+        <li class="nav-item"><a href="../pages/about.html" class="nav-link"><i class="fas fa-info-circle"></i> সম্পর্কে</a></li>
+        <li class="nav-item"><a href="../pages/contribute.html" class="nav-link nav-cta"><i class="fas fa-hands-helping"></i> অবদান রাখুন</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <main class="page-content">
+
+    <!-- Hero -->
+    <section class="tool-page-hero">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="../index.html">হোম</a>
+          <span>/</span>
+          <a href="#">রিসোর্স</a>
+          <span>/</span>
+          <span>ডেটাসেট</span>
+        </nav>
+        <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1rem">
+          <div style="width:56px;height:56px;background:linear-gradient(135deg,#3b82f6,#6366f1);border-radius:14px;display:flex;align-items:center;justify-content:center;color:white;font-size:1.5rem">
+            <i class="fas fa-database"></i>
+          </div>
+          <div>
+            <h1>বাংলা NLP ডেটাসেট</h1>
+            <p style="margin:0;font-size:.9rem">Bengali Language Datasets</p>
+          </div>
+        </div>
+        <p>গবেষণা ও মডেল প্রশিক্ষণের জন্য সেরা বাংলা ডেটাসেটের কিউরেটেড সংকলন।</p>
+      </div>
+    </section>
+
+    <!-- Datasets -->
+    <section class="section-sm">
+      <div class="container">
+
+        <!-- Featured -->
+        <div style="margin-bottom:2rem">
+          <h2 style="font-size:1.4rem;margin-bottom:1.25rem">
+            <i class="fas fa-star" style="color:var(--color-accent)"></i> প্রধান ডেটাসেট
+          </h2>
+          <div class="grid grid-2" style="gap:1.25rem">
+
+            <div class="dataset-item">
+              <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:1rem">
+                <div>
+                  <h3>Bengali.AI Datasets</h3>
+                  <p style="font-size:.875rem;margin:.5rem 0">বাংলাদেশের সবচেয়ে বড় উন্মুক্ত বাংলা ডেটাসেট সংগ্রহ। ASR, NLP, এবং CV ডেটাসেট অন্তর্ভুক্ত।</p>
+                </div>
+                <a href="https://bengali.ai/datasets" target="_blank" rel="noopener" class="btn btn-sm btn-primary" style="flex-shrink:0">
+                  <i class="fas fa-external-link-alt"></i> দেখুন
+                </a>
+              </div>
+              <div class="tag-list">
+                <span class="tag">ASR</span>
+                <span class="tag">NLP</span>
+                <span class="tag blue">Computer Vision</span>
+                <span class="tag orange">উন্মুক্ত</span>
+              </div>
+            </div>
+
+            <div class="dataset-item">
+              <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:1rem">
+                <div>
+                  <h3>CC-100 Bengali Corpus</h3>
+                  <p style="font-size:.875rem;margin:.5rem 0">Common Crawl থেকে তৈরি বিশাল বাংলা ওয়েব কর্পাস। ভাষা মডেল প্রশিক্ষণের জন্য আদর্শ।</p>
+                </div>
+                <a href="https://data.statmt.org/cc-100/" target="_blank" rel="noopener" class="btn btn-sm btn-primary" style="flex-shrink:0">
+                  <i class="fas fa-external-link-alt"></i> দেখুন
+                </a>
+              </div>
+              <div class="tag-list">
+                <span class="tag">Language Model</span>
+                <span class="tag blue">Web Corpus</span>
+                <span class="tag orange">~৩৮ GB</span>
+              </div>
+            </div>
+
+            <div class="dataset-item">
+              <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:1rem">
+                <div>
+                  <h3>IndicNLP Bengali Resources</h3>
+                  <p style="font-size:.875rem;margin:.5rem 0">AI4Bharat প্রকল্পের অধীনে ইন্ডিক ভাষার NLP রিসোর্স। বাংলা কর্পাস এবং টুলকিট সহ।</p>
+                </div>
+                <a href="https://indicnlp.ai4bharat.org/" target="_blank" rel="noopener" class="btn btn-sm btn-primary" style="flex-shrink:0">
+                  <i class="fas fa-external-link-alt"></i> দেখুন
+                </a>
+              </div>
+              <div class="tag-list">
+                <span class="tag">NLP Toolkit</span>
+                <span class="tag blue">Corpus</span>
+                <span class="tag purple">Indic Languages</span>
+              </div>
+            </div>
+
+            <div class="dataset-item">
+              <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:1rem">
+                <div>
+                  <h3>BanglaBERT Pre-training Data</h3>
+                  <p style="font-size:.875rem;margin:.5rem 0">BUET NLP গ্রুপের তৈরি BanglaBERT মডেলের প্রশিক্ষণ ডেটা। বাংলা BERT মডেলের জন্য।</p>
+                </div>
+                <a href="https://huggingface.co/csebuetnlp/banglabert" target="_blank" rel="noopener" class="btn btn-sm btn-primary" style="flex-shrink:0">
+                  <i class="fas fa-external-link-alt"></i> দেখুন
+                </a>
+              </div>
+              <div class="tag-list">
+                <span class="tag">BERT</span>
+                <span class="tag blue">Pre-training</span>
+                <span class="tag purple">HuggingFace</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Task-specific -->
+        <div style="margin-bottom:2rem">
+          <h2 style="font-size:1.4rem;margin-bottom:1.25rem">
+            <i class="fas fa-tasks" style="color:var(--color-primary)"></i> টাস্ক-নির্দিষ্ট ডেটাসেট
+          </h2>
+          <div class="grid grid-2" style="gap:1rem">
+
+            <div class="dataset-item">
+              <h3><i class="fas fa-smile" style="color:var(--color-primary);font-size:.9em"></i> Sentiment Analysis</h3>
+              <p style="font-size:.875rem;margin:.5rem 0">বাংলা সেন্টিমেন্ট বিশ্লেষণের জন্য লেবেলড ডেটাসেট। সোশ্যাল মিডিয়া কমেন্ট এবং রিভিউ অন্তর্ভুক্ত।</p>
+              <div class="tag-list">
+                <span class="tag">Sentiment</span>
+                <span class="tag blue">Classification</span>
+              </div>
+              <a href="https://github.com/rezacsedu/Bengali-Hate-Speech-Dataset" target="_blank" rel="noopener" class="btn btn-sm btn-secondary" style="margin-top:.75rem">
+                <i class="fab fa-github"></i> GitHub
+              </a>
+            </div>
+
+            <div class="dataset-item">
+              <h3><i class="fas fa-tag" style="color:var(--color-primary);font-size:.9em"></i> Named Entity Recognition (NER)</h3>
+              <p style="font-size:.875rem;margin:.5rem 0">বাংলা NER ডেটাসেট যাতে ব্যক্তি, স্থান, প্রতিষ্ঠান লেবেলযুক্ত টোকেন আছে।</p>
+              <div class="tag-list">
+                <span class="tag">NER</span>
+                <span class="tag blue">Token Classification</span>
+              </div>
+              <a href="https://huggingface.co/datasets/sagorsarker/bangla-ner" target="_blank" rel="noopener" class="btn btn-sm btn-secondary" style="margin-top:.75rem">
+                <i class="fas fa-robot"></i> HuggingFace
+              </a>
+            </div>
+
+            <div class="dataset-item">
+              <h3><i class="fas fa-microphone" style="color:var(--color-primary);font-size:.9em"></i> Bengali ASR Dataset</h3>
+              <p style="font-size:.875rem;margin:.5rem 0">বাংলা স্বয়ংক্রিয় বক্তৃতা স্বীকৃতির জন্য অডিও এবং ট্রান্সক্রিপ্ট ডেটাসেট।</p>
+              <div class="tag-list">
+                <span class="tag">ASR</span>
+                <span class="tag blue">Audio</span>
+                <span class="tag orange">Speech</span>
+              </div>
+              <a href="https://bengali.ai/datasets/" target="_blank" rel="noopener" class="btn btn-sm btn-secondary" style="margin-top:.75rem">
+                <i class="fas fa-external-link-alt"></i> Bengali.AI
+              </a>
+            </div>
+
+            <div class="dataset-item">
+              <h3><i class="fas fa-book" style="color:var(--color-primary);font-size:.9em"></i> Question Answering</h3>
+              <p style="font-size:.875rem;margin:.5rem 0">বাংলা প্রশ্ন-উত্তর ডেটাসেট। Bengali SQuAD-style reading comprehension.</p>
+              <div class="tag-list">
+                <span class="tag">QA</span>
+                <span class="tag blue">Reading Comprehension</span>
+              </div>
+              <a href="https://huggingface.co/datasets/csebuetnlp/xlsum" target="_blank" rel="noopener" class="btn btn-sm btn-secondary" style="margin-top:.75rem">
+                <i class="fas fa-robot"></i> HuggingFace
+              </a>
+            </div>
+
+            <div class="dataset-item">
+              <h3><i class="fas fa-language" style="color:var(--color-primary);font-size:.9em"></i> Machine Translation</h3>
+              <p style="font-size:.875rem;margin:.5rem 0">বাংলা-ইংরেজি সমান্তরাল কর্পাস মেশিন অনুবাদ মডেল প্রশিক্ষণের জন্য।</p>
+              <div class="tag-list">
+                <span class="tag">Translation</span>
+                <span class="tag blue">Parallel Corpus</span>
+              </div>
+              <a href="https://opus.nlpl.eu/results/bn&en/corpus-result-table" target="_blank" rel="noopener" class="btn btn-sm btn-secondary" style="margin-top:.75rem">
+                <i class="fas fa-external-link-alt"></i> OPUS
+              </a>
+            </div>
+
+            <div class="dataset-item">
+              <h3><i class="fas fa-newspaper" style="color:var(--color-primary);font-size:.9em"></i> Text Summarization</h3>
+              <p style="font-size:.875rem;margin:.5rem 0">বাংলা সংবাদ সংক্ষেপ ডেটাসেট (XL-Sum)। ১৮,০০০+ বাংলা আর্টিকেল এবং সারসংক্ষেপ।</p>
+              <div class="tag-list">
+                <span class="tag">Summarization</span>
+                <span class="tag blue">News</span>
+                <span class="tag orange">18K+</span>
+              </div>
+              <a href="https://huggingface.co/datasets/csebuetnlp/xlsum" target="_blank" rel="noopener" class="btn btn-sm btn-secondary" style="margin-top:.75rem">
+                <i class="fas fa-robot"></i> HuggingFace
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Kaggle datasets -->
+        <div style="margin-top:1.5rem;padding:1.5rem;background:rgba(0,106,78,0.05);border:1px solid rgba(0,106,78,0.15);border-radius:var(--radius-lg)">
+          <h4><i class="fab fa-kaggle" style="color:#20beff"></i> Kaggle বাংলা ডেটাসেট</h4>
+          <p style="font-size:.875rem;margin:.5rem 0">Kaggle-এ অনেক কমিউনিটি-তৈরি বাংলা ডেটাসেট পাওয়া যায়।</p>
+          <a href="https://www.kaggle.com/datasets?search=bengali+bangla" target="_blank" rel="noopener" class="btn btn-secondary" style="margin-top:.75rem">
+            <i class="fab fa-kaggle"></i> Kaggle-এ খুঁজুন
+          </a>
+        </div>
+
+        <!-- Contribute a dataset -->
+        <div style="margin-top:2rem;padding:1.5rem;background:linear-gradient(135deg,rgba(0,106,78,.07),rgba(0,145,106,.05));border:1px dashed rgba(0,106,78,.3);border-radius:var(--radius-lg)">
+          <h4>🤝 আপনার ডেটাসেট যোগ করুন</h4>
+          <p style="font-size:.875rem;margin:.5rem 0 1rem">যদি আপনার কাছে কোনো বাংলা ডেটাসেট থাকে, আমাদের সাথে শেয়ার করুন!</p>
+          <a href="../pages/contribute.html" class="btn btn-primary btn-sm">
+            <i class="fas fa-plus"></i> ডেটাসেট যোগ করুন
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <p>&copy; <span class="current-year"></span> Bangladeshi-AI। MIT লাইসেন্সের অধীনে উন্মুক্ত।</p>
+        <p>বাংলা ভাষার জন্য তৈরি ❤️</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../assets/js/script.js"></script>
+</body>
+</html>

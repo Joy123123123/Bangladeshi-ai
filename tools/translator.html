@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="বাংলা-ইংরেজি অনুবাদক - Bengali to English and English to Bengali translation tool.">
+  <title>বাংলা অনুবাদক | Bangladeshi-AI</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%23006a4e'/%3E%3Ctext y='72' x='50' text-anchor='middle' font-size='60'%3E🇧🇩%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar" role="navigation">
+    <div class="nav-container">
+      <a href="../index.html" class="nav-logo">
+        <span class="logo-flag">🇧🇩</span>
+        <span class="logo-text">
+          <span>Bangladeshi-AI</span>
+          <span>বাংলা ভাষার প্ল্যাটফর্ম</span>
+        </span>
+      </a>
+      <ul class="nav-menu" id="navMenu">
+        <li class="nav-item"><a href="../index.html" class="nav-link"><i class="fas fa-home"></i> হোম</a></li>
+        <li class="nav-item dropdown">
+          <a href="#" class="nav-link active"><i class="fas fa-tools"></i> টুলস <i class="fas fa-chevron-down" style="font-size:.7em"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="text-analyzer.html" class="dropdown-item"><i class="fas fa-file-alt"></i> টেক্সট বিশ্লেষক</a></li>
+            <li><a href="speech-to-text.html" class="dropdown-item"><i class="fas fa-microphone"></i> স্পিচ-টু-টেক্সট</a></li>
+            <li><a href="translator.html" class="dropdown-item"><i class="fas fa-language"></i> অনুবাদক</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a href="#" class="nav-link"><i class="fas fa-book"></i> রিসোর্স <i class="fas fa-chevron-down" style="font-size:.7em"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="../resources/datasets.html" class="dropdown-item"><i class="fas fa-database"></i> ডেটাসেট</a></li>
+            <li><a href="../resources/tutorials.html" class="dropdown-item"><i class="fas fa-graduation-cap"></i> টিউটোরিয়াল</a></li>
+            <li><a href="../resources/research.html" class="dropdown-item"><i class="fas fa-flask"></i> গবেষণা</a></li>
+          </ul>
+        </li>
+        <li class="nav-item"><a href="../pages/about.html" class="nav-link"><i class="fas fa-info-circle"></i> সম্পর্কে</a></li>
+        <li class="nav-item"><a href="../pages/contribute.html" class="nav-link nav-cta"><i class="fas fa-hands-helping"></i> অবদান রাখুন</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <main class="page-content">
+
+    <!-- Page Hero -->
+    <section class="tool-page-hero">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="../index.html">হোম</a>
+          <span>/</span>
+          <a href="#">টুলস</a>
+          <span>/</span>
+          <span>অনুবাদক</span>
+        </nav>
+        <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1rem">
+          <div style="width:56px;height:56px;background:linear-gradient(135deg,#3b82f6,#6366f1);border-radius:14px;display:flex;align-items:center;justify-content:center;color:white;font-size:1.5rem">
+            <i class="fas fa-language"></i>
+          </div>
+          <div>
+            <h1>বাংলা অনুবাদক</h1>
+            <p style="margin:0;font-size:.9rem">Bengali ↔ English Translator</p>
+          </div>
+        </div>
+        <p>বাংলা থেকে ইংরেজি এবং ইংরেজি থেকে বাংলায় অনুবাদ করুন। মেশিন ট্রান্সলেশন প্রযুক্তি বুঝুন।</p>
+      </div>
+    </section>
+
+    <!-- Tool Interface -->
+    <section class="section-sm">
+      <div class="container">
+        <div class="alert alert-warning">
+          <i class="fas fa-exclamation-triangle"></i>
+          <span>এটি একটি ডেমো টুল। বাস্তব অনুবাদের জন্য Google Translate বা অন্য API-এর সংযোগ প্রয়োজন। কিছু পরিচিত বাক্যের ডেমো অনুবাদ দেওয়া আছে।</span>
+        </div>
+
+        <form id="translatorForm">
+          <!-- Language selector bar -->
+          <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1rem;padding:1rem;background:var(--bg-card);border:1px solid var(--border-color);border-radius:var(--radius-lg)">
+            <div style="flex:1">
+              <label for="sourceLang" style="font-size:.8rem;color:var(--text-muted);display:block;margin-bottom:.25rem">উৎস ভাষা</label>
+              <select id="sourceLang" style="width:100%;padding:.5rem;border:1px solid var(--border-color);border-radius:8px;font-family:var(--font-bengali);background:var(--bg-white);color:var(--text-primary)">
+                <option value="bn">বাংলা (Bengali)</option>
+                <option value="en">English</option>
+              </select>
+            </div>
+            <button type="button" id="swapBtn" class="btn btn-secondary" style="margin-top:1rem;padding:.6rem 1rem" aria-label="Swap languages">
+              <i class="fas fa-exchange-alt"></i>
+            </button>
+            <div style="flex:1">
+              <label for="targetLang" style="font-size:.8rem;color:var(--text-muted);display:block;margin-bottom:.25rem">লক্ষ্য ভাষা</label>
+              <select id="targetLang" style="width:100%;padding:.5rem;border:1px solid var(--border-color);border-radius:8px;font-family:var(--font-bengali);background:var(--bg-white);color:var(--text-primary)">
+                <option value="en">English</option>
+                <option value="bn">বাংলা (Bengali)</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Translation panels -->
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem">
+            <!-- Source -->
+            <div class="tool-interface">
+              <div class="tool-interface-header">
+                <i class="fas fa-keyboard" style="color:var(--color-primary)"></i>
+                <strong>মূল টেক্সট</strong>
+              </div>
+              <div class="tool-interface-body">
+                <div class="input-group">
+                  <textarea
+                    id="sourceText"
+                    rows="8"
+                    placeholder="এখানে টেক্সট লিখুন..."
+                    aria-label="Source text"
+                  ></textarea>
+                </div>
+                <div style="display:flex;gap:.75rem;flex-wrap:wrap">
+                  <button type="submit" class="btn btn-primary">
+                    <i class="fas fa-language"></i> অনুবাদ করুন
+                  </button>
+                  <button type="button" onclick="document.getElementById('sourceText').value='';document.getElementById('translationResult').innerHTML='<p class=result-placeholder>অনুবাদ এখানে দেখানো হবে...</p>'" class="btn btn-secondary">
+                    <i class="fas fa-trash"></i> মুছুন
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Target -->
+            <div class="tool-interface">
+              <div class="tool-interface-header" style="justify-content:space-between">
+                <div style="display:flex;align-items:center;gap:.75rem">
+                  <i class="fas fa-align-left" style="color:var(--color-primary)"></i>
+                  <strong>অনুবাদ</strong>
+                </div>
+                <button type="button" id="copyTranslation" class="btn btn-sm btn-secondary">
+                  <i class="fas fa-copy"></i> Copy
+                </button>
+              </div>
+              <div class="tool-interface-body">
+                <div class="result-box" id="translationResult" style="min-height:160px">
+                  <p class="result-placeholder">অনুবাদ এখানে দেখানো হবে...</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+
+        <!-- Example phrases -->
+        <div style="margin-top:2rem">
+          <h3 style="font-size:1.1rem;margin-bottom:1rem;color:var(--text-secondary)">উদাহরণ বাক্য (ক্লিক করুন)</h3>
+          <div style="display:flex;flex-wrap:wrap;gap:.5rem">
+            <button class="btn btn-sm btn-secondary" onclick="setExample('আমি বাংলাদেশ ভালোবাসি')">আমি বাংলাদেশ ভালোবাসি</button>
+            <button class="btn btn-sm btn-secondary" onclick="setExample('বাংলা ভাষা সুন্দর')">বাংলা ভাষা সুন্দর</button>
+            <button class="btn btn-sm btn-secondary" onclick="setExample('কৃত্রিম বুদ্ধিমত্তা')">কৃত্রিম বুদ্ধিমত্তা</button>
+            <button class="btn btn-sm btn-secondary" onclick="setExample('ধন্যবাদ')">ধন্যবাদ</button>
+            <button class="btn btn-sm btn-secondary" onclick="setExample('আপনার নাম কি?')">আপনার নাম কি?</button>
+          </div>
+        </div>
+
+        <!-- About MT -->
+        <div style="margin-top:2.5rem">
+          <h2 style="font-size:1.4rem;margin-bottom:1rem">মেশিন ট্রান্সলেশন কী?</h2>
+          <div class="grid grid-2" style="gap:1.5rem">
+            <div class="contribute-card">
+              <h4><i class="fas fa-robot" style="color:var(--color-primary)"></i> Neural Machine Translation</h4>
+              <p style="font-size:.875rem;margin-top:.5rem">আধুনিক মেশিন অনুবাদ ব্যবস্থা গভীর শিক্ষণ (deep learning) মডেল ব্যবহার করে যা বিশাল পরিমাণের দ্বিভাষিক টেক্সট থেকে শিখে।</p>
+            </div>
+            <div class="contribute-card">
+              <h4><i class="fas fa-globe" style="color:var(--color-primary)"></i> বাংলার চ্যালেঞ্জ</h4>
+              <p style="font-size:.875rem;margin-top:.5rem">বাংলার জন্য মেশিন অনুবাদ কঠিন কারণ এটি একটি মর্ফোলজিক্যালি সমৃদ্ধ ভাষা এবং প্রশিক্ষণ ডেটা কম।</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Resources -->
+        <div style="margin-top:2rem;padding:1.5rem;background:rgba(0,106,78,0.05);border:1px solid rgba(0,106,78,0.15);border-radius:var(--radius-lg)">
+          <h4 style="margin-bottom:.75rem">🔗 বাস্তব অনুবাদ API সমূহ</h4>
+          <ul style="list-style:none;display:flex;flex-wrap:wrap;gap:.75rem">
+            <li><a href="https://cloud.google.com/translate" target="_blank" rel="noopener" class="btn btn-sm btn-secondary"><i class="fab fa-google"></i> Google Translate API</a></li>
+            <li><a href="https://www.deepl.com/api" target="_blank" rel="noopener" class="btn btn-sm btn-secondary">DeepL API</a></li>
+            <li><a href="https://huggingface.co/models?pipeline_tag=translation&language=bn" target="_blank" rel="noopener" class="btn btn-sm btn-secondary"><i class="fas fa-robot"></i> HuggingFace Bengali Models</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+      <div class="container">
+        <h2>অন্য টুলগুলো ব্যবহার করুন</h2>
+        <p>আরও বাংলা AI টুলস এক্সপ্লোর করুন</p>
+        <div class="cta-actions">
+          <a href="text-analyzer.html" class="btn btn-white btn-lg"><i class="fas fa-file-alt"></i> টেক্সট বিশ্লেষক</a>
+          <a href="speech-to-text.html" class="btn btn-outline-white btn-lg"><i class="fas fa-microphone"></i> স্পিচ-টু-টেক্সট</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <p>&copy; <span class="current-year"></span> Bangladeshi-AI। MIT লাইসেন্সের অধীনে উন্মুক্ত।</p>
+        <p>বাংলা ভাষার জন্য তৈরি ❤️</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../assets/js/script.js"></script>
+  <script>
+    function setExample(text) {
+      const input = document.getElementById('sourceText');
+      const resultBox = document.getElementById('translationResult');
+      if (!input || !resultBox) return;
+      input.value = text;
+      // Trigger translation directly to avoid bypassing form validation
+      resultBox.innerHTML = '<div class="flex-center" style="padding:2rem"><div class="spinner"></div><span style="margin-left:.75rem;color:var(--text-muted)">অনুবাদ হচ্ছে...</span></div>';
+      const DEMO_TRANSLATIONS = {
+        'আমি বাংলাদেশ ভালোবাসি': 'I love Bangladesh',
+        'বাংলা ভাষা সুন্দর': 'The Bengali language is beautiful',
+        'কৃত্রিম বুদ্ধিমত্তা': 'Artificial Intelligence',
+        'ধন্যবাদ': 'Thank you',
+        'আপনার নাম কি?': 'What is your name?',
+      };
+      setTimeout(() => {
+        const translation = DEMO_TRANSLATIONS[text] || `[Demo] Translated: "${text.substring(0, 60)}${text.length > 60 ? '…' : ''}"`;
+        resultBox.innerHTML = `
+          <div class="translation-output" style="font-family:var(--font-bengali);font-size:1.1rem;line-height:1.7;color:var(--text-primary);margin-bottom:.75rem">${translation}</div>
+          <p style="font-size:.8rem;color:var(--text-muted)">⚠️ এটি একটি ডেমো অনুবাদ। বাস্তব অনুবাদের জন্য Google Translate API সংযোগ প্রয়োজন।</p>`;
+      }, 700);
+    }
+  </script>
+</body>
+</html>

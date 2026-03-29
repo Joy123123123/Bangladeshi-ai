@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="বাংলা স্পিচ-টু-টেক্সট টুল - বাংলায় কথা বলুন, AI লিখে দেবে।">
+  <title>বাংলা স্পিচ-টু-টেক্সট | Bangladeshi-AI</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%23006a4e'/%3E%3Ctext y='72' x='50' text-anchor='middle' font-size='60'%3E🇧🇩%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    .mic-btn {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      border: none;
+      font-size: 2.5rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .mic-btn.start {
+      background: linear-gradient(135deg, #006a4e, #00916a);
+      color: white;
+      box-shadow: 0 8px 32px rgba(0,106,78,0.35);
+    }
+    .mic-btn.start:hover {
+      transform: scale(1.08);
+      box-shadow: 0 12px 40px rgba(0,106,78,0.5);
+    }
+    .mic-btn.stop {
+      background: linear-gradient(135deg, #f42a41, #d41e33);
+      color: white;
+      box-shadow: 0 8px 32px rgba(244,42,65,0.35);
+      animation: pulse-red 1.2s ease-in-out infinite;
+    }
+    @keyframes pulse-red {
+      0%, 100% { transform: scale(1); box-shadow: 0 8px 32px rgba(244,42,65,0.35); }
+      50% { transform: scale(1.05); box-shadow: 0 12px 48px rgba(244,42,65,0.55); }
+    }
+    .wave-bar {
+      display: inline-block;
+      width: 4px;
+      height: 20px;
+      background: var(--color-primary);
+      border-radius: 2px;
+      margin: 0 2px;
+      animation: wave 0.9s ease-in-out infinite;
+    }
+    .wave-bar:nth-child(2) { animation-delay: 0.15s; }
+    .wave-bar:nth-child(3) { animation-delay: 0.3s; }
+    .wave-bar:nth-child(4) { animation-delay: 0.45s; }
+    .wave-bar:nth-child(5) { animation-delay: 0.6s; }
+    @keyframes wave {
+      0%, 100% { height: 6px; opacity: 0.4; }
+      50% { height: 24px; opacity: 1; }
+    }
+    .wave-container { display: flex; align-items: center; gap: 2px; }
+    .wave-hidden { display: none; }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar" role="navigation">
+    <div class="nav-container">
+      <a href="../index.html" class="nav-logo">
+        <span class="logo-flag">🇧🇩</span>
+        <span class="logo-text">
+          <span>Bangladeshi-AI</span>
+          <span>বাংলা ভাষার প্ল্যাটফর্ম</span>
+        </span>
+      </a>
+      <ul class="nav-menu" id="navMenu">
+        <li class="nav-item"><a href="../index.html" class="nav-link"><i class="fas fa-home"></i> হোম</a></li>
+        <li class="nav-item dropdown">
+          <a href="#" class="nav-link active"><i class="fas fa-tools"></i> টুলস <i class="fas fa-chevron-down" style="font-size:.7em"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="text-analyzer.html" class="dropdown-item"><i class="fas fa-file-alt"></i> টেক্সট বিশ্লেষক</a></li>
+            <li><a href="speech-to-text.html" class="dropdown-item"><i class="fas fa-microphone"></i> স্পিচ-টু-টেক্সট</a></li>
+            <li><a href="translator.html" class="dropdown-item"><i class="fas fa-language"></i> অনুবাদক</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a href="#" class="nav-link"><i class="fas fa-book"></i> রিসোর্স <i class="fas fa-chevron-down" style="font-size:.7em"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="../resources/datasets.html" class="dropdown-item"><i class="fas fa-database"></i> ডেটাসেট</a></li>
+            <li><a href="../resources/tutorials.html" class="dropdown-item"><i class="fas fa-graduation-cap"></i> টিউটোরিয়াল</a></li>
+            <li><a href="../resources/research.html" class="dropdown-item"><i class="fas fa-flask"></i> গবেষণা</a></li>
+          </ul>
+        </li>
+        <li class="nav-item"><a href="../pages/about.html" class="nav-link"><i class="fas fa-info-circle"></i> সম্পর্কে</a></li>
+        <li class="nav-item"><a href="../pages/contribute.html" class="nav-link nav-cta"><i class="fas fa-hands-helping"></i> অবদান রাখুন</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <main class="page-content">
+
+    <!-- Page Hero -->
+    <section class="tool-page-hero">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="../index.html">হোম</a>
+          <span>/</span>
+          <a href="#">টুলস</a>
+          <span>/</span>
+          <span>স্পিচ-টু-টেক্সট</span>
+        </nav>
+        <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1rem">
+          <div style="width:56px;height:56px;background:linear-gradient(135deg,#f42a41,#ff6b7a);border-radius:14px;display:flex;align-items:center;justify-content:center;color:white;font-size:1.5rem">
+            <i class="fas fa-microphone"></i>
+          </div>
+          <div>
+            <h1>বাংলা স্পিচ-টু-টেক্সট</h1>
+            <p style="margin:0;font-size:.9rem">Bengali Speech Recognition</p>
+          </div>
+        </div>
+        <p>বাংলায় কথা বলুন এবং দেখুন Web Speech API কীভাবে আপনার কণ্ঠস্বর লিখিত টেক্সটে রূপান্তর করে।</p>
+      </div>
+    </section>
+
+    <!-- Tool Interface -->
+    <section class="section-sm">
+      <div class="container">
+        <div class="alert alert-info">
+          <i class="fas fa-info-circle"></i>
+          <span>এই টুলটি Web Speech API ব্যবহার করে যা Chrome ও Edge ব্রাউজারে সবচেয়ে ভালো কাজ করে। মাইক্রোফোন অনুমতি প্রয়োজন।</span>
+        </div>
+
+        <!-- Mic Control -->
+        <div class="tool-interface" style="max-width:600px;margin:0 auto">
+          <div class="tool-interface-header">
+            <i class="fas fa-microphone" style="color:var(--color-secondary)"></i>
+            <strong>ভয়েস রেকর্ডিং কন্ট্রোল</strong>
+          </div>
+          <div class="tool-interface-body" style="text-align:center;padding:2rem">
+            <!-- Status -->
+            <p id="recordingStatus" style="color:var(--text-muted);margin-bottom:1.5rem;min-height:1.5em">
+              মাইক্রোফোন বোতাম চাপুন এবং বাংলায় কথা বলুন
+            </p>
+
+            <!-- Wave animation (hidden when not recording) -->
+            <div id="waveAnim" class="wave-container flex-center wave-hidden" style="margin-bottom:1.5rem">
+              <div class="wave-bar"></div>
+              <div class="wave-bar"></div>
+              <div class="wave-bar"></div>
+              <div class="wave-bar"></div>
+              <div class="wave-bar"></div>
+            </div>
+
+            <!-- Mic buttons -->
+            <div style="display:flex;gap:1.5rem;justify-content:center;margin-bottom:2rem">
+              <button id="startRecording" class="mic-btn start" aria-label="Start recording">
+                <i class="fas fa-microphone"></i>
+              </button>
+              <button id="stopRecording" class="mic-btn stop" disabled aria-label="Stop recording">
+                <i class="fas fa-stop"></i>
+              </button>
+            </div>
+
+            <div style="display:flex;gap:.75rem;justify-content:center;font-size:.85rem;color:var(--text-muted)">
+              <span><i class="fas fa-circle" style="color:#00a854;font-size:.6em"></i> শুরু করুন</span>
+              <span><i class="fas fa-circle" style="color:#f42a41;font-size:.6em"></i> থামুন</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Transcript Output -->
+        <div class="tool-interface" style="margin-top:1.5rem">
+          <div class="tool-interface-header" style="justify-content:space-between">
+            <div style="display:flex;align-items:center;gap:.75rem">
+              <i class="fas fa-align-left" style="color:var(--color-primary)"></i>
+              <strong>ট্রান্সক্রিপ্ট</strong>
+            </div>
+            <button id="copyTranscript" class="btn btn-sm btn-secondary" onclick="copyTranscript()">
+              <i class="fas fa-copy"></i> কপি করুন
+            </button>
+          </div>
+          <div class="tool-interface-body">
+            <div class="result-box" id="speechResult" style="min-height:160px">
+              <p class="result-placeholder">বাংলায় কথা বললে এখানে টেক্সট দেখানো হবে...</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tips -->
+        <div style="margin-top:2.5rem">
+          <h2 style="font-size:1.4rem;margin-bottom:1rem">ব্যবহারের টিপস</h2>
+          <div class="grid grid-3" style="gap:1rem">
+            <div class="contribute-card">
+              <div style="font-size:1.5rem;margin-bottom:.75rem">🎙️</div>
+              <h4>স্পষ্টভাবে কথা বলুন</h4>
+              <p style="font-size:.875rem">ধীরে এবং স্পষ্টভাবে কথা বললে রিকগনিশনের মান ভালো হয়।</p>
+            </div>
+            <div class="contribute-card">
+              <div style="font-size:1.5rem;margin-bottom:.75rem">🔇</div>
+              <h4>শান্ত পরিবেশ</h4>
+              <p style="font-size:.875rem">কম শব্দের পরিবেশে বাংলা স্পিচ রিকগনিশন আরও ভালো কাজ করে।</p>
+            </div>
+            <div class="contribute-card">
+              <div style="font-size:1.5rem;margin-bottom:.75rem">🌐</div>
+              <h4>Chrome ব্যবহার করুন</h4>
+              <p style="font-size:.875rem">Google Chrome বা Microsoft Edge ব্রাউজারে সবচেয়ে ভালো ফলাফল পাওয়া যায়।</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- How it works -->
+        <div style="margin-top:2.5rem">
+          <h2 style="font-size:1.4rem;margin-bottom:1rem">এটি কীভাবে কাজ করে?</h2>
+          <div class="contribute-card">
+            <div class="contribute-step">
+              <div class="step-number">১</div>
+              <div>
+                <h4>মাইক্রোফোন অ্যাক্সেস</h4>
+                <p style="font-size:.875rem">ব্রাউজার আপনার মাইক্রোফোনে অ্যাক্সেস নেয় (আপনার অনুমতি প্রয়োজন)।</p>
+              </div>
+            </div>
+            <div class="contribute-step">
+              <div class="step-number">২</div>
+              <div>
+                <h4>অডিও প্রসেসিং</h4>
+                <p style="font-size:.875rem">Web Speech API আপনার কণ্ঠস্বর গুগলের সার্ভারে পাঠায় বিশ্লেষণের জন্য।</p>
+              </div>
+            </div>
+            <div class="contribute-step">
+              <div class="step-number">৩</div>
+              <div>
+                <h4>বাংলা টেক্সট</h4>
+                <p style="font-size:.875rem">AI মডেল বাংলা ভাষা চিনে লিখিত টেক্সটে রূপান্তর করে।</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+      <div class="container">
+        <h2>অন্য টুলগুলো ব্যবহার করুন</h2>
+        <p>আরও বাংলা AI টুলস এক্সপ্লোর করুন</p>
+        <div class="cta-actions">
+          <a href="text-analyzer.html" class="btn btn-white btn-lg"><i class="fas fa-file-alt"></i> টেক্সট বিশ্লেষক</a>
+          <a href="translator.html" class="btn btn-outline-white btn-lg"><i class="fas fa-language"></i> অনুবাদক</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <p>&copy; <span class="current-year"></span> Bangladeshi-AI। MIT লাইসেন্সের অধীনে উন্মুক্ত।</p>
+        <p>বাংলা ভাষার জন্য তৈরি ❤️</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../assets/js/script.js"></script>
+  <script>
+    function copyTranscript() {
+      const result = document.getElementById('speechResult');
+      const text = result ? result.textContent.trim() : '';
+      if (text && text !== 'বাংলায় কথা বললে এখানে টেক্সট দেখানো হবে...') {
+        navigator.clipboard.writeText(text).then(() => {
+          const btn = document.getElementById('copyTranscript');
+          if (btn) {
+            btn.innerHTML = '<i class="fas fa-check"></i> কপি হয়েছে!';
+            setTimeout(() => { btn.innerHTML = '<i class="fas fa-copy"></i> কপি করুন'; }, 2000);
+          }
+        });
+      }
+    }
+
+    // Show/hide wave animation during recording
+    const startBtn = document.getElementById('startRecording');
+    const stopBtn = document.getElementById('stopRecording');
+    const waveAnim = document.getElementById('waveAnim');
+    if (startBtn && waveAnim) {
+      startBtn.addEventListener('click', () => {
+        waveAnim.classList.remove('wave-hidden');
+      });
+    }
+    if (stopBtn && waveAnim) {
+      stopBtn.addEventListener('click', () => {
+        waveAnim.classList.add('wave-hidden');
+      });
+    }
+  </script>
+</body>
+</html>
