@@ -1,4 +1,5 @@
-from pydantic import BaseSettings
+from pydantic_settings import BaseSettings
+
 
 class Config(BaseSettings):
     GEMINI_API_KEY: str
@@ -7,6 +8,4 @@ class Config(BaseSettings):
     REDIS_URL: str
     CHROMADB_URL: str
 
-    class Config:
-        env_file = '.env'
-        env_file_encoding = 'utf-8'
+    model_config = {"env_file": ".env", "env_file_encoding": "utf-8"}
