@@ -1,0 +1,34 @@
+version: '3.8'  
+
+services:  
+  fastapi:  
+    image: tiangolo/uvicorn-gunicorn-fastapi:python3.9  
+    ports:  
+      - '8000:80'  
+    volumes:  
+      - ./app:/app  
+    environment:  
+      - MODULE_NAME=main  
+    depends_on:  
+      - mongodb  
+      - redis  
+
+  mongodb:  
+    image: mongo:4.4  
+    ports:  
+      - '27017:27017'  
+    volumes:  
+      - mongodb_data:/data/db  
+
+  redis:  
+    image: redis:6.0  
+    ports:  
+      - '6379:6379'  
+
+  chromadb:  
+    image: chromadb/chromadb:latest  
+    ports:  
+      - '8001:8001'  
+
+volumes:  
+  mongodb_data:  
