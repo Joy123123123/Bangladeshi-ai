@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Bengali script rendering optimisations */
+body {
+  font-family: "Noto Sans Bengali", "SolaimanLipi", system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Smooth scrollbar for chat message list */
+.overflow-y-auto {
+  scrollbar-width: thin;
+  scrollbar-color: #86efac transparent;
+}
+.overflow-y-auto::-webkit-scrollbar {
+  width: 4px;
+}
+.overflow-y-auto::-webkit-scrollbar-thumb {
+  background-color: #86efac;
+  border-radius: 4px;
+}
+
+/* Textarea auto-resize helper */
+textarea {
+  field-sizing: content;
+  min-height: 2.5rem;
+}
