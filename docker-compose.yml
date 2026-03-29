@@ -1,0 +1,66 @@
+version: "3.9"
+
+services:
+  # ----------------------------------------------------------------
+  # FastAPI backend
+  # ----------------------------------------------------------------
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: bangladeshi_ai_api
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    environment:
+      MONGODB_URL: mongodb://mongo:27017/bangladeshi_ai
+      REDIS_URL: redis://redis:6379
+      CHROMADB_PATH: /data/chromadb
+    volumes:
+      - chromadb_data:/data/chromadb
+    depends_on:
+      mongo:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+
+  # ----------------------------------------------------------------
+  # MongoDB
+  # ----------------------------------------------------------------
+  mongo:
+    image: mongo:7.0
+    container_name: bangladeshi_ai_mongo
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+    healthcheck:
+      test: ["CMD", "mongosh", "--eval", "db.adminCommand('ping')"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # ----------------------------------------------------------------
+  # Redis
+  # ----------------------------------------------------------------
+  redis:
+    image: redis:7.4-alpine
+    container_name: bangladeshi_ai_redis
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 3s
+      retries: 5
+
+volumes:
+  mongo_data:
+  redis_data:
+  chromadb_data:
