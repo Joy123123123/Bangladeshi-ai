@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="বাংলা টেক্সট বিশ্লেষণ টুল - অনুভূতি বিশ্লেষণ, শব্দ গণনা এবং আরও অনেক কিছু।">
+  <title>বাংলা টেক্সট বিশ্লেষক | Bangladeshi-AI</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%23006a4e'/%3E%3Ctext y='72' x='50' text-anchor='middle' font-size='60'%3E🇧🇩%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar" role="navigation">
+    <div class="nav-container">
+      <a href="../index.html" class="nav-logo">
+        <span class="logo-flag">🇧🇩</span>
+        <span class="logo-text">
+          <span>Bangladeshi-AI</span>
+          <span>বাংলা ভাষার প্ল্যাটফর্ম</span>
+        </span>
+      </a>
+      <ul class="nav-menu" id="navMenu">
+        <li class="nav-item"><a href="../index.html" class="nav-link"><i class="fas fa-home"></i> হোম</a></li>
+        <li class="nav-item dropdown">
+          <a href="#" class="nav-link active"><i class="fas fa-tools"></i> টুলস <i class="fas fa-chevron-down" style="font-size:.7em"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="text-analyzer.html" class="dropdown-item"><i class="fas fa-file-alt"></i> টেক্সট বিশ্লেষক</a></li>
+            <li><a href="speech-to-text.html" class="dropdown-item"><i class="fas fa-microphone"></i> স্পিচ-টু-টেক্সট</a></li>
+            <li><a href="translator.html" class="dropdown-item"><i class="fas fa-language"></i> অনুবাদক</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a href="#" class="nav-link"><i class="fas fa-book"></i> রিসোর্স <i class="fas fa-chevron-down" style="font-size:.7em"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="../resources/datasets.html" class="dropdown-item"><i class="fas fa-database"></i> ডেটাসেট</a></li>
+            <li><a href="../resources/tutorials.html" class="dropdown-item"><i class="fas fa-graduation-cap"></i> টিউটোরিয়াল</a></li>
+            <li><a href="../resources/research.html" class="dropdown-item"><i class="fas fa-flask"></i> গবেষণা</a></li>
+          </ul>
+        </li>
+        <li class="nav-item"><a href="../pages/about.html" class="nav-link"><i class="fas fa-info-circle"></i> সম্পর্কে</a></li>
+        <li class="nav-item"><a href="../pages/contribute.html" class="nav-link nav-cta"><i class="fas fa-hands-helping"></i> অবদান রাখুন</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <main class="page-content">
+
+    <!-- Page Hero -->
+    <section class="tool-page-hero">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="../index.html">হোম</a>
+          <span>/</span>
+          <a href="#">টুলস</a>
+          <span>/</span>
+          <span>টেক্সট বিশ্লেষক</span>
+        </nav>
+        <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1rem">
+          <div style="width:56px;height:56px;background:linear-gradient(135deg,#006a4e,#00916a);border-radius:14px;display:flex;align-items:center;justify-content:center;color:white;font-size:1.5rem">
+            <i class="fas fa-file-alt"></i>
+          </div>
+          <div>
+            <h1>বাংলা টেক্সট বিশ্লেষক</h1>
+            <p style="margin:0;font-size:.9rem">Bengali Text Analyzer</p>
+          </div>
+        </div>
+        <p>বাংলা টেক্সটের অনুভূতি বিশ্লেষণ, শব্দ ও বাক্য গণনা, এবং ভাষাগত বৈশিষ্ট্য অন্বেষণ করুন।</p>
+      </div>
+    </section>
+
+    <!-- Tool Interface -->
+    <section class="section-sm">
+      <div class="container">
+        <div class="alert alert-info" style="margin-bottom:1.5rem">
+          <i class="fas fa-info-circle"></i>
+          <span>এটি একটি ডেমো টুল। বাস্তব ML মডেল ইন্টিগ্রেশন ভবিষ্যতে যোগ করা হবে।</span>
+        </div>
+
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;align-items:start">
+          <!-- Input -->
+          <div class="tool-interface">
+            <div class="tool-interface-header">
+              <i class="fas fa-edit" style="color:var(--color-primary)"></i>
+              <strong>বাংলা টেক্সট লিখুন</strong>
+            </div>
+            <div class="tool-interface-body">
+              <form id="textAnalyzerForm">
+                <div class="input-group">
+                  <label for="bengaliTextInput">টেক্সট ইনপুট</label>
+                  <textarea
+                    id="bengaliTextInput"
+                    rows="8"
+                    placeholder="এখানে বাংলা টেক্সট লিখুন বা পেস্ট করুন..."
+                    aria-label="Bengali text input"
+                  ></textarea>
+                  <div style="display:flex;justify-content:space-between;margin-top:.5rem;font-size:.8rem;color:var(--text-muted)">
+                    <span><span id="charCount">0</span> অক্ষর</span>
+                    <span><span id="wordCount">0</span> শব্দ</span>
+                  </div>
+                </div>
+
+                <!-- Sample texts -->
+                <div style="margin-bottom:1rem">
+                  <p style="font-size:.85rem;font-weight:600;margin-bottom:.5rem;color:var(--text-secondary)">নমুনা টেক্সট:</p>
+                  <div style="display:flex;flex-wrap:wrap;gap:.5rem">
+                    <button type="button" class="btn btn-sm btn-secondary sample-text-btn">নমুনা ১</button>
+                    <button type="button" class="btn btn-sm btn-secondary sample-text-btn">নমুনা ২</button>
+                    <button type="button" class="btn btn-sm btn-secondary sample-text-btn">নমুনা ৩</button>
+                  </div>
+                </div>
+
+                <div style="display:flex;gap:.75rem">
+                  <button type="submit" id="analyzeBtn" class="btn btn-primary">
+                    <i class="fas fa-search"></i> বিশ্লেষণ করুন
+                  </button>
+                  <button type="button" id="clearBtn" class="btn btn-secondary">
+                    <i class="fas fa-trash"></i> মুছুন
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <!-- Result -->
+          <div class="tool-interface">
+            <div class="tool-interface-header">
+              <i class="fas fa-chart-bar" style="color:var(--color-primary)"></i>
+              <strong>বিশ্লেষণের ফলাফল</strong>
+            </div>
+            <div class="tool-interface-body">
+              <div class="result-box" id="analyzerResult">
+                <p class="result-placeholder">বিশ্লেষণের ফলাফল এখানে দেখানো হবে...</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- What does it analyze? -->
+        <div style="margin-top:2.5rem">
+          <h2 style="font-size:1.5rem;margin-bottom:1.5rem">এই টুল কী বিশ্লেষণ করে?</h2>
+          <div class="grid grid-3" style="gap:1rem">
+            <div class="feature-card" style="padding:1.25rem">
+              <div class="feature-icon green" style="width:44px;height:44px;font-size:1.1rem"><i class="fas fa-smile"></i></div>
+              <h3 style="font-size:1rem">অনুভূতি বিশ্লেষণ</h3>
+              <p style="font-size:.85rem">টেক্সট ইতিবাচক, নেতিবাচক বা নিরপেক্ষ কিনা নির্ধারণ করে।</p>
+            </div>
+            <div class="feature-card" style="padding:1.25rem">
+              <div class="feature-icon blue" style="width:44px;height:44px;font-size:1.1rem"><i class="fas fa-calculator"></i></div>
+              <h3 style="font-size:1rem">পরিসংখ্যান</h3>
+              <p style="font-size:.85rem">শব্দ সংখ্যা, বাক্য সংখ্যা, অক্ষর গণনা এবং গড় শব্দ দৈর্ঘ্য।</p>
+            </div>
+            <div class="feature-card" style="padding:1.25rem">
+              <div class="feature-icon purple" style="width:44px;height:44px;font-size:1.1rem"><i class="fas fa-tag"></i></div>
+              <h3 style="font-size:1rem">ভাষাগত বৈশিষ্ট্য</h3>
+              <p style="font-size:.85rem">ভবিষ্যতে: NER, POS tagging, এবং আরও উন্নত বিশ্লেষণ।</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Learn More -->
+    <section class="cta-section">
+      <div class="container">
+        <h2>Bengali NLP সম্পর্কে আরও জানুন</h2>
+        <p>টিউটোরিয়াল এবং গবেষণা রিসোর্স দেখুন</p>
+        <div class="cta-actions">
+          <a href="../resources/tutorials.html" class="btn btn-white btn-lg"><i class="fas fa-graduation-cap"></i> টিউটোরিয়াল</a>
+          <a href="../resources/research.html" class="btn btn-outline-white btn-lg"><i class="fas fa-flask"></i> গবেষণা পেপার</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <p>&copy; <span class="current-year"></span> Bangladeshi-AI। MIT লাইসেন্সের অধীনে উন্মুক্ত।</p>
+        <p>বাংলা ভাষার জন্য তৈরি ❤️</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../assets/js/script.js"></script>
+</body>
+</html>
